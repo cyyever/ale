@@ -64,6 +64,7 @@ Notes:
   * `flawfinder`
   * `gcc` (`cc`)
   * `uncrustify`
+  * `pvsstudio`
 * C#
   * `csc`!!
   * `mcs`
@@ -84,6 +85,7 @@ Notes:
   * `flawfinder`
   * `gcc` (`cc`)
   * `uncrustify`
+  * `pvsstudio`
 * Chef
   * `cookstyle`
   * `foodcritic`

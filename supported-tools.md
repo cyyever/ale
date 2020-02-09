@@ -73,6 +73,7 @@ formatting.
   * [flawfinder](https://www.dwheeler.com/flawfinder/)
   * [gcc](https://gcc.gnu.org/)
   * [uncrustify](https://github.com/uncrustify/uncrustify)
+  * [pvsstudio](https://www.viva64.com/en/pvs-studio/)
 * C#
   * [csc](http://www.mono-project.com/docs/about-mono/languages/csharp/) :floppy_disk: see:`help ale-cs-csc` for details and configuration
   * [mcs](http://www.mono-project.com/docs/about-mono/languages/csharp/) see:`help ale-cs-mcs` for details
@@ -93,6 +94,7 @@ formatting.
   * [flawfinder](https://www.dwheeler.com/flawfinder/)
   * [gcc](https://gcc.gnu.org/)
   * [uncrustify](https://github.com/uncrustify/uncrustify)
+  * [pvsstudio](https://www.viva64.com/en/pvs-studio/)
 * Chef
   * [cookstyle](https://docs.chef.io/cookstyle.html)
   * [foodcritic](http://www.foodcritic.io/)
