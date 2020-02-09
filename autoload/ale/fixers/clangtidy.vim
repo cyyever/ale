@@ -14,7 +14,7 @@ function! s:set_variables() abort
         call ale#Set(l:ft . '_clangtidy_fix_errors', 1)
     endfor
 
-    call ale#Set('c_build_dir', '')
+    call ale#Set('c_build_dir_names', [])
 endfunction
 
 call s:set_variables()

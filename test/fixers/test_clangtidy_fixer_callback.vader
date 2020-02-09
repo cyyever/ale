@@ -1,5 +1,4 @@
 Before:
-  Save g:ale_c_build_dir
   Save g:ale_c_clangtidy_executable
   Save g:ale_c_clangtidy_checks
   Save g:ale_c_clangtidy_extra_options
@@ -14,7 +13,6 @@ Before:
   let g:ale_cpp_clangtidy_executable = 'xxxinvalidpp'
   let g:ale_cpp_clangtidy_checks = []
   let g:ale_cpp_clangtidy_extra_options = ''
-  let g:ale_c_build_dir = ''
 
   call ale#test#SetDirectory('/testplugin/test/fixers')
 

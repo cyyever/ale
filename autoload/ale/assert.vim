@@ -292,6 +292,16 @@ function! ale#assert#SetUpLinterTest(filetype, name) abort
     Save g:ale_c_build_dir
     unlet! g:ale_c_build_dir
     unlet! b:ale_c_build_dir
+    " Save and clear linter variables.
+    " We'll load the runtime file to reset them to defaults.
+    for l:key in filter(keys(g:), b:filter_expr)
+        execute 'Save g:' . l:key
+        unlet g:[l:key]
+    endfor
+
+    for l:key in filter(keys(b:), b:filter_expr)
+        unlet b:[l:key]
+    endfor
 
     execute 'runtime ale_linters/' . a:filetype . '/' . a:name . '.vim'
 

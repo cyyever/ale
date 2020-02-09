@@ -17,7 +17,7 @@ call ale#Set('c_clangtidy_checks', [])
 call ale#Set('c_clangtidy_options', '')
 " Set this option to manually set options for clang-tidy directly.
 call ale#Set('c_clangtidy_extra_options', '')
-call ale#Set('c_build_dir', '')
+call ale#Set('c_build_dir_names', [])
 
 function! ale_linters#c#clangtidy#GetCommand(buffer, output) abort
     let l:checks = join(ale#Var(a:buffer, 'c_clangtidy_checks'), ',')
