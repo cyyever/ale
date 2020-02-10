@@ -463,7 +463,14 @@ function! ale#c#ParseCompileCommandsFlags(buffer, file_lookup, dir_lookup) abort
         endif
     endfor
 
-    return ''
+    " Use any file in all directories if we can't find an exact match.
+    let l:cflags = ''
+    for l:dir in keys(a:dir_lookup)
+        let l:item = get(a:dir_lookup, l:dir, [])[0]
+        let l:cflags = l:cflags.' '.ale#c#ParseCFlags(l:item.directory, ale#c#GetCompileCommand(l:item))
+    endfor
+
+    return l:cflags
 endfunction
 
 function! ale#c#FlagsFromCompileCommands(buffer, compile_commands_file) abort
