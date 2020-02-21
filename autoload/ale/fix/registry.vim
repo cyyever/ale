@@ -677,6 +677,11 @@ let s:default_registry = {
 \       'suggested_filetypes': ['python'],
 \       'description': 'Fix python files with the ruff formatter.',
 \   },
+\   'psscriptanalyzer': {
+\       'function': 'ale#fixers#psscriptanalyzer#Fix',
+\       'suggested_filetypes': ['ps1', 'powershell'],
+\       'description': 'Fix Powershell scripts with PSScriptAnalyzer.',
+\   },
 \   'pycln': {
 \       'function': 'ale#fixers#pycln#Fix',
 \       'suggested_filetypes': ['python'],
