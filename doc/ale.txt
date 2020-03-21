@@ -3470,6 +3470,7 @@ documented in additional help files.
     lacheck...............................|ale-tex-lacheck|
     latexindent...........................|ale-tex-latexindent|
     texlab................................|ale-tex-texlab|
+    textidote.............................|ale-tex-textidote|
   texinfo.................................|ale-texinfo-options|
     cspell................................|ale-texinfo-cspell|
     write-good............................|ale-texinfo-write-good|
