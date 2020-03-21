@@ -3952,6 +3952,7 @@ documented in additional help files.
     latexindent...........................|ale-tex-latexindent|
     texlab................................|ale-tex-texlab|
     redpen................................|ale-tex-redpen|
+    textidote.............................|ale-tex-textidote|
   texinfo.................................|ale-texinfo-options|
     cspell................................|ale-texinfo-cspell|
     write-good............................|ale-texinfo-write-good|
