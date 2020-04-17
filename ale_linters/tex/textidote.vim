@@ -22,7 +22,7 @@ function! ale_linters#tex#textidote#GetExecutable(buffer) abort
 endfunction
 
 function! ale_linters#tex#textidote#Handle(buffer, lines) abort
-    let l:pattern = '.*' . expand('#' . a:buffer . ':t:r') . '\.tex(L\(\d\+\)C\(\d\+\)-L\d\+C\d\+): \(.*\)".*"'
+    let l:pattern = '.*L\(\d\+\)C\(\d\+\)-L\d\+C\d\+ \(.*\)'
     let l:output = []
 
     for l:match in ale#util#GetMatches(a:lines, l:pattern)
