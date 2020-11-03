@@ -467,7 +467,8 @@ function! ale#c#ParseCompileCommandsFlags(buffer, file_lookup, dir_lookup) abort
     let l:cflags = ''
     for l:dir in keys(a:dir_lookup)
         let l:item = get(a:dir_lookup, l:dir, [])[0]
-        let l:cflags = l:cflags.' '.ale#c#ParseCFlags(l:item.directory, ale#c#GetCompileCommand(l:item))
+        let [l:should_quote, l:args] = s:GetArguments(l:item)
+        let l:cflags = l:cflags.' '.ale#c#ParseCFlags(l:item.directory, l:should_quote, l:args)
     endfor
 
     return l:cflags
