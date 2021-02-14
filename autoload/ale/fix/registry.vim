@@ -455,6 +455,11 @@ let s:default_registry = {
 \       'function': 'ale#fixers#vfmt#Fix',
 \       'suggested_filetypes': ['v'],
 \       'description': 'A formatter for V source code.',
+\   },
+\   'psscriptanalyzer': {
+\       'function': 'ale#fixers#psscriptanalyzer#Fix',
+\       'suggested_filetypes': ['ps1', 'powershell'],
+\       'description': 'Fix Powershell scripts with PSScriptAnalyzer.',
 \   }
 \}
 
