@@ -11,6 +11,23 @@ function! ale_linters#cpp#cc#GetExecutable(buffer) abort
 
     " Default to either clang++ or gcc.
     if l:executable is# '<auto>'
+        let [l:root, l:json_file] = ale#c#FindCompileCommands(a:buffer)
+        if !empty(l:json_file)
+          if executable('jq')
+            let l:res = system("jq '.[0].command' ".l:json_file."  | grep -e '/[^ ]*/bin/[^ ]*g++[^ ]*' -o")
+            if v:shell_error == 0
+              let l:executable = l:res
+              return l:executable
+            endif
+          endif
+
+          let l:res = system("grep -e '/[^ ]*/bin/[^ ]*g++[^ ]*' -o " .l:json_file)
+          if v:shell_error == 0
+            let l:executable = l:res
+            return l:executable
+          endif
+        endif
+
         if ale#engine#IsExecutable(a:buffer, 'clang++')
             let l:executable = 'clang++'
         else
