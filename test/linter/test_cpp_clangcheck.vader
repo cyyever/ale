@@ -26,10 +26,3 @@ Execute(The options should be configurable):
   \   . ' --extra-arg=-Xclang --extra-arg=-analyzer-output=text --extra-arg=-fno-color-diagnostics'
   \   . ' --something'
 
-Execute(The build directory should be used when set):
-  let b:ale_cpp_clangcheck_options = '--something'
-  let b:ale_c_build_dir = '/foo/bar'
-
-  AssertLinter 'clang-check',
-  \ ale#Escape('clang-check')
-  \   . ' -analyze %s --something -p ' . ale#Escape('/foo/bar')

@@ -12,7 +12,6 @@ The following C options also apply to some C++ linters too.
 
 * |g:ale_c_always_make|
 * |g:ale_c_build_dir_names|
-* |g:ale_c_build_dir|
 * |g:ale_c_parse_makefile|
 * |g:ale_c_parse_compile_commands|
 
@@ -102,9 +101,7 @@ clangcheck                                                 *ale-cpp-clangcheck*
 `clang-check` will be run only when files are saved to disk, so that
 `compile_commands.json` files can be used. It is recommended to use this
 linter in combination with `compile_commands.json` files.
-Therefore, `clang-check` linter reads the options |g:ale_c_build_dir| and
-|g:ale_c_build_dir_names|. Also, setting |g:ale_c_build_dir| actually
-overrides |g:ale_c_build_dir_names|.
+Therefore, `clang-check` linter reads the option |g:ale_c_build_dir_names|.
 
 
 g:ale_cpp_clangcheck_executable               *g:ale_cpp_clangcheck_executable*
@@ -123,7 +120,7 @@ g:ale_cpp_clangcheck_options                     *g:ale_cpp_clangcheck_options*
   This variable can be changed to modify flags given to clang-check.
 
   This variable should not be set to point to build subdirectory with
-  `-p path/to/build` option, as it is handled by the |g:ale_c_build_dir|
+  `-p path/to/build` option, as it is handled by the |g:ale_c_build_dir_names|
   option.
 
 
@@ -159,9 +156,7 @@ clangtidy                                                   *ale-cpp-clangtidy*
 `clang-tidy` will be run only when files are saved to disk, so that
 `compile_commands.json` files can be used. It is recommended to use this
 linter in combination with `compile_commands.json` files.
-Therefore, `clang-tidy` linter reads the options |g:ale_c_build_dir| and
-|g:ale_c_build_dir_names|. Also, setting |g:ale_c_build_dir| actually
-overrides |g:ale_c_build_dir_names|.
+Therefore, `clang-tidy` linter reads the option |g:ale_c_build_dir_names|.
 
 
 g:ale_cpp_clangtidy_checks                         *g:ale_cpp_clangtidy_checks*
@@ -193,7 +188,7 @@ g:ale_cpp_clangtidy_options                       *g:ale_cpp_clangtidy_options*
 
   - Setting this variable to a non-empty string,
   - and working in a buffer where no compilation database is found using
-    |g:ale_c_build_dir_names| or |g:ale_c_build_dir|,
+    |g:ale_c_build_dir_names|,
   will cause the `--` argument to be passed to `clang-tidy`, which will mean
   that detection of `compile_commands.json` files for compile command
   databases will be disabled.

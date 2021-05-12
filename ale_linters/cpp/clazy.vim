@@ -6,7 +6,7 @@ call ale#Set('cpp_clazy_checks', ['level1'])
 " Set this option to manually set some options for clazy.
 " This will disable compile_commands.json detection.
 call ale#Set('cpp_clazy_options', '')
-call ale#Set('c_build_dir', '')
+call ale#Set('c_build_dir_names', [])
 
 function! ale_linters#cpp#clazy#GetCommand(buffer) abort
     let l:checks = join(ale#Var(a:buffer, 'cpp_clazy_checks'), ',')

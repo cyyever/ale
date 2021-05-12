@@ -3,18 +3,13 @@
 
 call ale#Set('cpp_clangcheck_executable', 'clang-check')
 call ale#Set('cpp_clangcheck_options', '')
-call ale#Set('c_build_dir', '')
+call ale#Set('c_build_dir_names', [])
 
 function! ale_linters#cpp#clangcheck#GetCommand(buffer) abort
     let l:user_options = ale#Var(a:buffer, 'cpp_clangcheck_options')
 
     " Try to find compilation database to link automatically
-    let l:build_dir = ale#Var(a:buffer, 'c_build_dir')
-
-    if empty(l:build_dir)
-        let [l:root, l:json_file] = ale#c#FindCompileCommands(a:buffer)
-        let l:build_dir = ale#path#Dirname(l:json_file)
-    endif
+    let l:build_dir = ale#c#GetBuildDirectory(a:buffer)
 
     " The extra arguments in the command are used to prevent .plist files from
     " being generated. These are only added if no build directory can be

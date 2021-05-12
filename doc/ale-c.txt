@@ -33,21 +33,6 @@ g:ale_c_build_dir_names                               *g:ale_c_build_dir_names*
   LibTooling (namely here, clang-tidy)
 
 
-g:ale_c_build_dir                                           *g:ale_c_build_dir*
-                                                            *b:ale_c_build_dir*
-
-  Type: |String|
-  Default: `''`
-
-  For programs that can read `compile_commands.json` files, this option can be
-  set to the directory containing the file for the project. ALE will try to
-  determine the location of `compile_commands.json` automatically, but if your
-  file exists in some other directory, you can set this option so ALE will
-  know where it is.
-
-  This directory will be searched instead of |g:ale_c_build_dir_names|.
-
-
 g:ale_c_parse_compile_commands                 *g:ale_c_parse_compile_commands*
                                                *b:ale_c_parse_compile_commands*
   Type: |Number|
@@ -249,9 +234,7 @@ clangtidy                                                     *ale-c-clangtidy*
 `clang-tidy` will be run only when files are saved to disk, so that
 `compile_commands.json` files can be used. It is recommended to use this
 linter in combination with `compile_commands.json` files.
-Therefore, `clang-tidy` linter reads the options |g:ale_c_build_dir| and
-|g:ale_c_build_dir_names|. Also, setting |g:ale_c_build_dir| actually
-overrides |g:ale_c_build_dir_names|.
+Therefore, `clang-tidy` linter reads the option |g:ale_c_build_dir_names|.
 
 
 g:ale_c_clangtidy_checks                             *g:ale_c_clangtidy_checks*
@@ -287,7 +270,7 @@ g:ale_c_clangtidy_options                           *g:ale_c_clangtidy_options*
 
   - Setting this variable to a non-empty string,
   - and working in a buffer where no compilation database is found using
-    |g:ale_c_build_dir_names| or |g:ale_c_build_dir|,
+    |g:ale_c_build_dir_names|,
   will cause the `--` argument to be passed to `clang-tidy`, which will mean
   that detection of `compile_commands.json` files for compile command
   databases will be disabled.

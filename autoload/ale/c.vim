@@ -24,13 +24,6 @@ function! s:CanParseMakefile(buffer) abort
 endfunction
 
 function! ale#c#GetBuildDirectory(buffer) abort
-    let l:build_dir = ale#Var(a:buffer, 'c_build_dir')
-
-    " c_build_dir has the priority if defined
-    if !empty(l:build_dir)
-        return l:build_dir
-    endif
-
     let [l:root, l:json_file] = ale#c#FindCompileCommands(a:buffer)
 
     return ale#path#Dirname(l:json_file)
