@@ -24,7 +24,7 @@ function! ale#handlers#pvsstudio#GetCommand(buffer) abort
       return ''
     endif
 
-    let l:cd_command = !empty(l:build_dir) ? ale#path#CdString(l:build_dir) : ''
+    let l:cd_command = !empty(l:build_dir) ? ale#command#CdString(l:build_dir) : ''
     let l:analyzer_options = ale#Var(a:buffer, 'pvs_studio_analyzer_options')
     let l:plog_converter_options = ale#Var(a:buffer, 'pvs_studio_plog_converter_options')
 
