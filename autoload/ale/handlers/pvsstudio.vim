@@ -8,7 +8,7 @@ call ale#Set('pvs_studio_plog_converter_options', '')
 
 function! ale#handlers#pvsstudio#GetCdCommand(buffer) abort
     let [l:dir, l:json_path] = ale#c#FindCompileCommands(a:buffer)
-    let l:cd_command = !empty(l:dir) ? ale#path#CdString(l:dir) : ''
+    let l:cd_command = !empty(l:dir) ? ale#command#CdString(l:dir) : ''
 
     return l:cd_command
 endfunction
