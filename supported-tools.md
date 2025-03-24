@@ -93,6 +93,7 @@ formatting.
   * [flawfinder](https://www.dwheeler.com/flawfinder/)
   * [gcc](https://gcc.gnu.org/)
   * [uncrustify](https://github.com/uncrustify/uncrustify)
+  * [pvsstudio](https://www.viva64.com/en/pvs-studio/)
 * C#
   * [clang-format](https://clang.llvm.org/docs/ClangFormat.html)
   * [csc](http://www.mono-project.com/docs/about-mono/languages/csharp/) :floppy_disk: see:`help ale-cs-csc` for details and configuration

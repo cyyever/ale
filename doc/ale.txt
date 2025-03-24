@@ -3439,6 +3439,7 @@ documented in additional help files.
     cspell................................|ale-cpp-cspell|
     flawfinder............................|ale-cpp-flawfinder|
     uncrustify............................|ale-cpp-uncrustify|
+    pvsstudio.............................|ale-cpp-pvsstudio|
   c#......................................|ale-cs-options|
     clang-format..........................|ale-cs-clangformat|
     csc...................................|ale-cs-csc|
