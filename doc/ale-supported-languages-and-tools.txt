@@ -81,6 +81,7 @@ Notes:
   * `flawfinder`
   * `gcc` (`cc`)
   * `uncrustify`
+  * `pvsstudio`
 * C#
   * `clang-format`
   * `csc`!!
